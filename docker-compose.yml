@@ -148,7 +148,7 @@ services:
       - "sentry-postgres:/var/lib/postgresql/data"
   pgbouncer:
     <<: *restart_policy
-    image: "edoburu/pgbouncer:v1.24.1-p1"
+    image: "docker.1ms.run/edoburu/pgbouncer:v1.24.1-p1"
     healthcheck:
       <<: *healthcheck_defaults
       # Using default user "postgres" from sentry/sentry.conf.example.py or value of POSTGRES_USER if provided
@@ -242,7 +242,7 @@ services:
       retries: 30
   seaweedfs:
     <<: *restart_policy
-    image: "chrislusf/seaweedfs:3.96_large_disk"
+    image: "docker.1ms.run/chrislusf/seaweedfs:3.96_large_disk"
     entrypoint: "weed"
     command: >-
         server
